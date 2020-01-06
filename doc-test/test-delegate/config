@@ -1,0 +1,31 @@
+PROJECT_NAME            = "Test Delegate"
+PROJECT_NUMBER          = 1.0.1
+PROJECT_LOGO            = VirtiumLogo.ico
+PROJECT_BRIEF           = "Test Delegate API"
+INPUT                   = ../../test-delegate/include \
+                          main-page.md
+USE_MDFILE_AS_MAINPAGE  = main-page.md
+HIDE_UNDOC_MEMBERS      = NO
+HIDE_UNDOC_CLASSES      = NO
+SOURCE_BROWSER          = NO
+FILE_PATTERNS           = *.cpp *.h q*.doc
+RECURSIVE               = YES
+EXCLUDE_PATTERNS        = *codec.cpp moc_* */compat/* */3rdparty/*
+ALPHABETICAL_INDEX      = YES
+COLS_IN_ALPHA_INDEX     = 3
+IGNORE_PREFIX           = Q
+ENABLE_PREPROCESSING    = YES
+MACRO_EXPANSION         = YES
+SORT_MEMBER_DOCS        = NO
+PREDEFINED              = Q_PROPERTY(x)= \
+                          Q_OVERRIDE(x)= \
+                          Q_EXPORT= \
+                          Q_ENUMS(x)= \
+                          "QT_STATIC_CONST=static const " \
+                          _WS_X11_ \
+                          INCLUDE_MENUITEM_DEF \
+                          protected=private
+EXPAND_ONLY_PREDEF      = YES
+EXPAND_AS_DEFINED       = Q_OBJECT_FAKE Q_OBJECT ACTIVATE_SIGNAL_WITH_PARAM \
+                          Q_VARIANT_AS
+EXTRACT_ALL             = YES

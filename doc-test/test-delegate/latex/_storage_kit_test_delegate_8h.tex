@@ -1,0 +1,179 @@
+\hypertarget{_storage_kit_test_delegate_8h}{}\section{C\+:/\+Users/tranminhtam/\+Documents/azure/\+Storage\+Kit/test-\/delegate/include/\+Storage\+Kit\+Test\+Delegate.h File Reference}
+\label{_storage_kit_test_delegate_8h}\index{C:/Users/tranminhtam/Documents/azure/StorageKit/test-\/delegate/include/StorageKitTestDelegate.h@{C:/Users/tranminhtam/Documents/azure/StorageKit/test-\/delegate/include/StorageKitTestDelegate.h}}
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Storage\+Kit\+Structures.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Storage\+Kit\+Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Storage\+Kit\+Aligned\+Buffer.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}}
+\begin{DoxyCompactList}\small\item\em This set of parameters is using for IO workloads\+: sequential reads or random writes. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}}
+\begin{DoxyCompactList}\small\item\em Declares performance results. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_k_t_thread_info}{S\+K\+T\+Thread\+Info}}
+\begin{DoxyCompactList}\small\item\em Declares thread information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_s_k_t_test_delegate}{S\+K\+T\+Test\+Delegate}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_storage_kit_test_delegate_8h_a860888516a36a19f833af1155c9e9df2}{Error\+Check}}(arg)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \{ \newline
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a499afc62c1702b252418124a74074609}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Succeeded}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ac0a467a4248fe9f3b45cc0213fe023e6}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Command\+Failed}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7af0c8aa0307e4c88c8e4792978618c154}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Command\+Completion\+Time\+Out}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a280d2196b1ca919991fcffa210314b99}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Device\+Type\+Unsupported}}, 
+\newline
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a64ceb131e1e3aff8d8da0723c4481eca}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Verify\+Data}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a76622e15224a2b167321685a5805476c}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Device\+Frozen}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a090a7845104b0a0d4279d3b38378bee5}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Security\+Locked}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ace779e5e029657649f74e4f80b253488}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+L\+B\+A\+Out\+Of\+Range}}, 
+\newline
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a48279ffb638f291d8a2f49dea6da7844}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Sector\+Count\+Out\+Of\+Range}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a92dbb37f86bc777662675b88e24729ec}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Device\+Info\+Null}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ac4c08b2c3d2fcec42855bf9914fffa45}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Starting\+Max\+Power\+Consumption\+Test}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7af88e7247c702681c80d43c51390c3d8c}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Stopping\+Max\+Power\+Consumption\+Test}}, 
+\newline
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a33dc50efe56053fee861164be5f05438}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Max\+Power\+Consumption\+Test\+Already\+Started}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a0dd7380756de3222e9ec04cf4610771f}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Max\+Power\+Consumption\+Test\+Already\+Stopped}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7af3b7723933aaeae30afd4b937322e671}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Starting\+Diagnostic\+Test}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7adaa821bec0d560353b82f0321b28adb9}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Stopping\+Diagnostic\+Test}}, 
+\newline
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7aec1b6ce6dcc6acb44485c1828ee3f82f}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Diagnostic\+Test\+Already\+Started}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ae73d027284cba5eb2701b1ef9dbe78a7}{S\+K\+T\+Return\+Code\+::\+S\+K\+T\+Error\+Diagnostic\+Test\+Already\+Stopped}}
+ \}
+\begin{DoxyCompactList}\small\item\em Declares test return code. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2ef}{S\+K\+T\+Power\+Consumption\+Mode}} \{ \mbox{\hyperlink{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2efa95dc34b329a5b7690609f2ae26b8ed68}{S\+K\+T\+Power\+Consumption\+Mode\+::\+S\+K\+T\+Production}}, 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2efaa0e040368edd0bd67a9337c02b7debe8}{S\+K\+T\+Power\+Consumption\+Mode\+::\+S\+K\+T\+Live}}
+ \}
+\begin{DoxyCompactList}\small\item\em Declares power consumption mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a860888516a36a19f833af1155c9e9df2}\label{_storage_kit_test_delegate_8h_a860888516a36a19f833af1155c9e9df2}} 
+\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!ErrorCheck@{ErrorCheck}}
+\index{ErrorCheck@{ErrorCheck}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}
+\subsubsection{\texorpdfstring{ErrorCheck}{ErrorCheck}}
+{\footnotesize\ttfamily \#define Error\+Check(\begin{DoxyParamCaption}\item[{}]{arg }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{                                            \(\backslash\)}
+\DoxyCodeLine{    SKTReturnCode ret = (arg);               \(\backslash\)}
+\DoxyCodeLine{    if (\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a499afc62c1702b252418124a74074609}{SKTReturnCode::SKTSucceeded}} != ret)  \(\backslash\)}
+\DoxyCodeLine{        return ret;                          \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}} 
+\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTReturnCode@{SKTReturnCode}}
+\index{SKTReturnCode@{SKTReturnCode}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}
+\subsubsection{\texorpdfstring{SKTReturnCode}{SKTReturnCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Declares test return code. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTSucceeded@{SKTSucceeded}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTSucceeded@{SKTSucceeded}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a499afc62c1702b252418124a74074609}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a499afc62c1702b252418124a74074609}} 
+S\+K\+T\+Succeeded&No error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorCommandFailed@{SKTErrorCommandFailed}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorCommandFailed@{SKTErrorCommandFailed}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ac0a467a4248fe9f3b45cc0213fe023e6}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ac0a467a4248fe9f3b45cc0213fe023e6}} 
+S\+K\+T\+Error\+Command\+Failed&Error command failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorCommandCompletionTimeOut@{SKTErrorCommandCompletionTimeOut}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorCommandCompletionTimeOut@{SKTErrorCommandCompletionTimeOut}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7af0c8aa0307e4c88c8e4792978618c154}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7af0c8aa0307e4c88c8e4792978618c154}} 
+S\+K\+T\+Error\+Command\+Completion\+Time\+Out&Error command completion time out \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorDeviceTypeUnsupported@{SKTErrorDeviceTypeUnsupported}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorDeviceTypeUnsupported@{SKTErrorDeviceTypeUnsupported}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a280d2196b1ca919991fcffa210314b99}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a280d2196b1ca919991fcffa210314b99}} 
+S\+K\+T\+Error\+Device\+Type\+Unsupported&Error device type unsupported \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorVerifyData@{SKTErrorVerifyData}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorVerifyData@{SKTErrorVerifyData}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a64ceb131e1e3aff8d8da0723c4481eca}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a64ceb131e1e3aff8d8da0723c4481eca}} 
+S\+K\+T\+Error\+Verify\+Data&Verify data failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorDeviceFrozen@{SKTErrorDeviceFrozen}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorDeviceFrozen@{SKTErrorDeviceFrozen}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a76622e15224a2b167321685a5805476c}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a76622e15224a2b167321685a5805476c}} 
+S\+K\+T\+Error\+Device\+Frozen&Error device in frozen \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorSecurityLocked@{SKTErrorSecurityLocked}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorSecurityLocked@{SKTErrorSecurityLocked}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a090a7845104b0a0d4279d3b38378bee5}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a090a7845104b0a0d4279d3b38378bee5}} 
+S\+K\+T\+Error\+Security\+Locked&Error security in locked \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorLBAOutOfRange@{SKTErrorLBAOutOfRange}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorLBAOutOfRange@{SKTErrorLBAOutOfRange}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ace779e5e029657649f74e4f80b253488}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ace779e5e029657649f74e4f80b253488}} 
+S\+K\+T\+Error\+L\+B\+A\+Out\+Of\+Range&Error L\+BA out of range \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorSectorCountOutOfRange@{SKTErrorSectorCountOutOfRange}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorSectorCountOutOfRange@{SKTErrorSectorCountOutOfRange}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a48279ffb638f291d8a2f49dea6da7844}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a48279ffb638f291d8a2f49dea6da7844}} 
+S\+K\+T\+Error\+Sector\+Count\+Out\+Of\+Range&Error sector count out of range \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorDeviceInfoNull@{SKTErrorDeviceInfoNull}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorDeviceInfoNull@{SKTErrorDeviceInfoNull}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a92dbb37f86bc777662675b88e24729ec}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a92dbb37f86bc777662675b88e24729ec}} 
+S\+K\+T\+Error\+Device\+Info\+Null&Error Device Identify null \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorStartingMaxPowerConsumptionTest@{SKTErrorStartingMaxPowerConsumptionTest}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorStartingMaxPowerConsumptionTest@{SKTErrorStartingMaxPowerConsumptionTest}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ac4c08b2c3d2fcec42855bf9914fffa45}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ac4c08b2c3d2fcec42855bf9914fffa45}} 
+S\+K\+T\+Error\+Starting\+Max\+Power\+Consumption\+Test&Error starting max power consumption test \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorStoppingMaxPowerConsumptionTest@{SKTErrorStoppingMaxPowerConsumptionTest}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorStoppingMaxPowerConsumptionTest@{SKTErrorStoppingMaxPowerConsumptionTest}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7af88e7247c702681c80d43c51390c3d8c}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7af88e7247c702681c80d43c51390c3d8c}} 
+S\+K\+T\+Error\+Stopping\+Max\+Power\+Consumption\+Test&Error stopping max power consumption test \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorMaxPowerConsumptionTestAlreadyStarted@{SKTErrorMaxPowerConsumptionTestAlreadyStarted}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorMaxPowerConsumptionTestAlreadyStarted@{SKTErrorMaxPowerConsumptionTestAlreadyStarted}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a33dc50efe56053fee861164be5f05438}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a33dc50efe56053fee861164be5f05438}} 
+S\+K\+T\+Error\+Max\+Power\+Consumption\+Test\+Already\+Started&Error max power consumption test is already started \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorMaxPowerConsumptionTestAlreadyStopped@{SKTErrorMaxPowerConsumptionTestAlreadyStopped}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorMaxPowerConsumptionTestAlreadyStopped@{SKTErrorMaxPowerConsumptionTestAlreadyStopped}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a0dd7380756de3222e9ec04cf4610771f}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7a0dd7380756de3222e9ec04cf4610771f}} 
+S\+K\+T\+Error\+Max\+Power\+Consumption\+Test\+Already\+Stopped&Error max power consumption test is already stopped \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorStartingDiagnosticTest@{SKTErrorStartingDiagnosticTest}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorStartingDiagnosticTest@{SKTErrorStartingDiagnosticTest}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7af3b7723933aaeae30afd4b937322e671}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7af3b7723933aaeae30afd4b937322e671}} 
+S\+K\+T\+Error\+Starting\+Diagnostic\+Test&Error starting diagnostic test \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorStoppingDiagnosticTest@{SKTErrorStoppingDiagnosticTest}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorStoppingDiagnosticTest@{SKTErrorStoppingDiagnosticTest}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7adaa821bec0d560353b82f0321b28adb9}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7adaa821bec0d560353b82f0321b28adb9}} 
+S\+K\+T\+Error\+Stopping\+Diagnostic\+Test&Error stopping diagnostic test \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorDiagnosticTestAlreadyStarted@{SKTErrorDiagnosticTestAlreadyStarted}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorDiagnosticTestAlreadyStarted@{SKTErrorDiagnosticTestAlreadyStarted}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7aec1b6ce6dcc6acb44485c1828ee3f82f}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7aec1b6ce6dcc6acb44485c1828ee3f82f}} 
+S\+K\+T\+Error\+Diagnostic\+Test\+Already\+Started&Error diagnostic test is already started \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTErrorDiagnosticTestAlreadyStopped@{SKTErrorDiagnosticTestAlreadyStopped}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTErrorDiagnosticTestAlreadyStopped@{SKTErrorDiagnosticTestAlreadyStopped}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ae73d027284cba5eb2701b1ef9dbe78a7}\label{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7ae73d027284cba5eb2701b1ef9dbe78a7}} 
+S\+K\+T\+Error\+Diagnostic\+Test\+Already\+Stopped&Error diagnostic test is already stopped \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2ef}\label{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2ef}} 
+\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTPowerConsumptionMode@{SKTPowerConsumptionMode}}
+\index{SKTPowerConsumptionMode@{SKTPowerConsumptionMode}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}
+\subsubsection{\texorpdfstring{SKTPowerConsumptionMode}{SKTPowerConsumptionMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2ef}{S\+K\+T\+Power\+Consumption\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Declares power consumption mode. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTProduction@{SKTProduction}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTProduction@{SKTProduction}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2efa95dc34b329a5b7690609f2ae26b8ed68}\label{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2efa95dc34b329a5b7690609f2ae26b8ed68}} 
+S\+K\+T\+Production&Production mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTLive@{SKTLive}!StorageKitTestDelegate.h@{StorageKitTestDelegate.h}}\index{StorageKitTestDelegate.h@{StorageKitTestDelegate.h}!SKTLive@{SKTLive}}}\mbox{\Hypertarget{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2efaa0e040368edd0bd67a9337c02b7debe8}\label{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2efaa0e040368edd0bd67a9337c02b7debe8}} 
+S\+K\+T\+Live&Live mode \\
+\hline
+
+\end{DoxyEnumFields}

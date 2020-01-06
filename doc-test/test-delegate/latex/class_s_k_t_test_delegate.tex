@@ -1,0 +1,508 @@
+\hypertarget{class_s_k_t_test_delegate}{}\section{S\+K\+T\+Test\+Delegate Class Reference}
+\label{class_s_k_t_test_delegate}\index{SKTTestDelegate@{SKTTestDelegate}}
+
+
+{\ttfamily \#include $<$Storage\+Kit\+Test\+Delegate.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_k_t_test_delegate_aecc4032aaee08b7c6f8eb4b5d21c1816}{S\+K\+T\+Test\+Delegate}} (S\+K\+Storage\+Device $\ast$storage\+Device, S\+K\+Device\+Info $\ast$device\+Info, bool load\+Written\+Lbas\+From\+File=true, bool free\+Storage\+Device=true)
+\begin{DoxyCompactList}\small\item\em Constructor that sets the storage device to a given value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_s_k_t_test_delegate_a7c0d861c72b763e76b2bde4c2f328989}{$\sim$\+S\+K\+T\+Test\+Delegate}} ()
+\begin{DoxyCompactList}\small\item\em Destructor that frees up memory. \end{DoxyCompactList}\item 
+const S\+K\+Device\+Info $\ast$ \mbox{\hyperlink{class_s_k_t_test_delegate_a77a53f075777687fa04173bc2efcd5ba}{get\+Device\+Info}} () const
+\begin{DoxyCompactList}\small\item\em Get instance pointer of device info. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a5dc6c0bb31013a0ecf4adf5506fa8524}{read\+L\+BA}} (U64 lba, U32 sector\+Count, S\+K\+Aligned\+Buffer $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Method to perform direct read from a storage device. ~\newline
+User specifies logical block address, number of sectors, and provides a buffer that contains read contents. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a5f419fc0e074bf3faccf3163b1c55831}{write\+L\+BA}} (U64 lba, U32 sector\+Count, S\+K\+Aligned\+Buffer $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Method to perform direct write to a storage device. ~\newline
+User specifies logical block address, number of sectors, and provides a buffer that contains write contents. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a0c1650ce1ef4c16593d4a950dc78dedf}{sequential\+Write\+With\+Unique\+Patterns}} (U64 start\+Lba, U64 end\+Lba, U32 block\+Size\+In\+KB)
+\begin{DoxyCompactList}\small\item\em This function writes unique data pattern for each L\+BA. ~\newline
+The data (written lbas) will be marked and stored on file. This file will be used for verification of data integrity. The marked written lbas file format is the combination of the device model and \textquotesingle{}\+\_\+lba.\+log\textquotesingle{}. ~\newline
+The writes are sequential. This function is useful in the following situations\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a5a6f15d6814f37378ba7a3b898cf41fe}{sequential\+Read}} (U64 start\+Lba, U64 end\+Lba, U32 block\+Size\+In\+KB)
+\begin{DoxyCompactList}\small\item\em Sequential read. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a5a1208defc74b67bdb4b1c486dea6087}{random\+Write\+With\+Unique\+Patterns}} (U64 start\+Lba, U64 end\+Lba, U32 block\+Size\+In\+KB, U32 size\+In\+MB, U32 seed)
+\begin{DoxyCompactList}\small\item\em This function writes unique data pattern for each L\+BA. ~\newline
+The data (written L\+B\+As) will be marked and stored on file. This file will be used for verification of data integrity. The marked written L\+B\+As file format is the combination of the device model and \textquotesingle{}\+\_\+lba.\+log\textquotesingle{}. ~\newline
+The writes are random. This function is useful in the following situations\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a093e3555e092155feb9c19f40f33e90d}{random\+Read}} (U64 start\+Lba, U64 end\+Lba, U32 block\+Size\+In\+KB, U32 size\+In\+MB, U32 seed)
+\begin{DoxyCompactList}\small\item\em Random read. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a544ac08a737b1045095deb23b8e6ba5d}{verify\+Data\+Integrity}} ()
+\begin{DoxyCompactList}\small\item\em Verify data integrity. ~\newline
+All marked written lbas will be read from the drive and use the information in the data itself to verify whether the data is OK or corrupted. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_ad25f9f0d4aabe6c159b08c751c3fce6a}{cleanup\+Workload\+Data\+File}} ()
+\begin{DoxyCompactList}\small\item\em Clean up workload data file which contains marked written lbas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a352d1c5033473624451b30e54117d316}{sequential\+Read\+Performance\+Test}} (\mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} \&bench\+Spec, \mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} \&report\+Info)
+\begin{DoxyCompactList}\small\item\em This function performs a sequential read test on the storage device and return performance data. ~\newline
+The performance data is calculated based on the amount data read and duration of the test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a223a0b6bfc90fe5ccdd43e8e966daeb0}{sequential\+Write\+Performance\+Test}} (\mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} \&bench\+Spec, \mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} \&report\+Info)
+\begin{DoxyCompactList}\small\item\em This function performs a sequential write test on the storage device and return performance data. ~\newline
+The performance data is calculated based on the amount data written and duration of the test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a9b3d1518a010dbb1c0d28d5360a6fa9f}{random\+Read\+Performance\+Test}} (\mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} \&bench\+Spec, \mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} \&report\+Info)
+\begin{DoxyCompactList}\small\item\em This function performs a random read test on the storage device and return performance data. ~\newline
+The performance data is calculated based on the amount data read and duration of the test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_abbe57641b0fab7b4088419a7c11f8978}{random\+Write\+Performance\+Test}} (\mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} \&bench\+Spec, \mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} \&report\+Info)
+\begin{DoxyCompactList}\small\item\em This function performs a random write test on the storage device and return performance data. ~\newline
+The performance data is calculated based on the amount data written and duration of the test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a0db3d4f4d578063fdd4f76878a380c29}{start\+Max\+Power\+Consumption\+Test}} (const \mbox{\hyperlink{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2ef}{S\+K\+T\+Power\+Consumption\+Mode}} \&mode)
+\begin{DoxyCompactList}\small\item\em Start the thread to create max power consumption condition on the S\+SD. There are two operating modes\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a022692ef371a3aa9a24e19b5a5e129c7}{stop\+Max\+Power\+Consumption\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Stop the thread is created previously by \mbox{\hyperlink{class_s_k_t_test_delegate_a0db3d4f4d578063fdd4f76878a380c29}{start\+Max\+Power\+Consumption\+Test}} function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a370b8ca0f86a90bc36101fd701b82609}{ata\+Sleep}} ()
+\begin{DoxyCompactList}\small\item\em Put device in sleep mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a90d0c168749430e20f9bee211adc20da}{start\+Diagnostic}} (const std\+::string \&log\+File\+Path)
+\begin{DoxyCompactList}\small\item\em Start the diagnostic. ~\newline
+Start the thread to log collected data (S\+M\+A\+RT) periodically on a log file. Data (S\+M\+A\+RT) including U\+D\+MA C\+RC error count and E\+CC recovered. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} \mbox{\hyperlink{class_s_k_t_test_delegate_a83eb8f0f40e0ba07f93bcc2bfbe3b14f}{stop\+Diagnostic}} ()
+\begin{DoxyCompactList}\small\item\em Stop the thread is created previously by \mbox{\hyperlink{class_s_k_t_test_delegate_a90d0c168749430e20f9bee211adc20da}{start\+Diagnostic}} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{class_s_k_t_test_delegate_factory_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{class_s_k_t_test_delegate_factory_DESCRIPTION}
+An object to support for Test Utilities. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_aecc4032aaee08b7c6f8eb4b5d21c1816}\label{class_s_k_t_test_delegate_aecc4032aaee08b7c6f8eb4b5d21c1816}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!SKTTestDelegate@{SKTTestDelegate}}
+\index{SKTTestDelegate@{SKTTestDelegate}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{SKTTestDelegate()}{SKTTestDelegate()}}
+{\footnotesize\ttfamily S\+K\+T\+Test\+Delegate\+::\+S\+K\+T\+Test\+Delegate (\begin{DoxyParamCaption}\item[{S\+K\+Storage\+Device $\ast$}]{storage\+Device,  }\item[{S\+K\+Device\+Info $\ast$}]{device\+Info,  }\item[{bool}]{load\+Written\+Lbas\+From\+File = {\ttfamily true},  }\item[{bool}]{free\+Storage\+Device = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Constructor that sets the storage device to a given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage\+Device} & A storage device object retrived from storage api (devices scanned). \\
+\hline
+{\em device\+Info} & A device info object specifies information of the device. \\
+\hline
+{\em load\+Written\+Data\+From\+File} & A bool variable to indicate whether written lbas load from file or initial new (default is true). \\
+\hline
+{\em free\+Storage\+Device} & A bool variable to indicate if storage device be freed up when this object destructs (default is true). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a7c0d861c72b763e76b2bde4c2f328989}\label{class_s_k_t_test_delegate_a7c0d861c72b763e76b2bde4c2f328989}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!````~SKTTestDelegate@{$\sim$SKTTestDelegate}}
+\index{````~SKTTestDelegate@{$\sim$SKTTestDelegate}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{$\sim$SKTTestDelegate()}{~SKTTestDelegate()}}
+{\footnotesize\ttfamily S\+K\+T\+Test\+Delegate\+::$\sim$\+S\+K\+T\+Test\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor that frees up memory. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a77a53f075777687fa04173bc2efcd5ba}\label{class_s_k_t_test_delegate_a77a53f075777687fa04173bc2efcd5ba}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!getDeviceInfo@{getDeviceInfo}}
+\index{getDeviceInfo@{getDeviceInfo}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{getDeviceInfo()}{getDeviceInfo()}}
+{\footnotesize\ttfamily const S\+K\+Device\+Info$\ast$ S\+K\+T\+Test\+Delegate\+::get\+Device\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get instance pointer of device info. 
+
+\begin{DoxyReturn}{Returns}
+The instance pointer of device info. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a5dc6c0bb31013a0ecf4adf5506fa8524}\label{class_s_k_t_test_delegate_a5dc6c0bb31013a0ecf4adf5506fa8524}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!readLBA@{readLBA}}
+\index{readLBA@{readLBA}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{readLBA()}{readLBA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::read\+L\+BA (\begin{DoxyParamCaption}\item[{U64}]{lba,  }\item[{U32}]{sector\+Count,  }\item[{S\+K\+Aligned\+Buffer $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Method to perform direct read from a storage device. ~\newline
+User specifies logical block address, number of sectors, and provides a buffer that contains read contents. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em lba} & An U64 variable contains logic block address. \\
+\hline
+ & {\em sector\+Count} & An U32 variable contains sector count. The sector count can vary between 1 and 256. \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffer} & A buffer object which contains the data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code will indicate whether the function succeed.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The maximum number of sector count up to 1024 in Linux system. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a5f419fc0e074bf3faccf3163b1c55831}\label{class_s_k_t_test_delegate_a5f419fc0e074bf3faccf3163b1c55831}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!writeLBA@{writeLBA}}
+\index{writeLBA@{writeLBA}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{writeLBA()}{writeLBA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::write\+L\+BA (\begin{DoxyParamCaption}\item[{U64}]{lba,  }\item[{U32}]{sector\+Count,  }\item[{S\+K\+Aligned\+Buffer $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Method to perform direct write to a storage device. ~\newline
+User specifies logical block address, number of sectors, and provides a buffer that contains write contents. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lba} & An U64 variable contains logic block address. \\
+\hline
+{\em sector\+Count} & An U32 variable contains sector count. The sector count can vary between 1 and 256. \\
+\hline
+{\em buffer} & A buffer object that contains the data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A S\+K\+T\+Test\+Return\+Code object to specify the return code.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The maximum number of sector count up to 1024 in Linux system. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a0c1650ce1ef4c16593d4a950dc78dedf}\label{class_s_k_t_test_delegate_a0c1650ce1ef4c16593d4a950dc78dedf}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!sequentialWriteWithUniquePatterns@{sequentialWriteWithUniquePatterns}}
+\index{sequentialWriteWithUniquePatterns@{sequentialWriteWithUniquePatterns}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{sequentialWriteWithUniquePatterns()}{sequentialWriteWithUniquePatterns()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::sequential\+Write\+With\+Unique\+Patterns (\begin{DoxyParamCaption}\item[{U64}]{start\+Lba,  }\item[{U64}]{end\+Lba,  }\item[{U32}]{block\+Size\+In\+KB }\end{DoxyParamCaption})}
+
+
+
+This function writes unique data pattern for each L\+BA. ~\newline
+The data (written lbas) will be marked and stored on file. This file will be used for verification of data integrity. The marked written lbas file format is the combination of the device model and \textquotesingle{}\+\_\+lba.\+log\textquotesingle{}. ~\newline
+The writes are sequential. This function is useful in the following situations\+: 
+
+
+\begin{DoxyItemize}
+\item To verify if data is corrupt in case of sudden power loss.
+\item To use with data retention test at power off. Write data to the drive and turn power off, read data from the drive later, and verify if the data is intact.
+\item To verify if data is corrupt due to address trampling, bad garbage collection or bad wear leveling in firmware.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Lba} & An U64 variable to specify a starting logical block address. \\
+\hline
+{\em end\+Lba} & An U64 variable to specify an ending logical block address. \\
+\hline
+{\em block\+Size\+In\+KB} & The block size in kilobyte is the unit of I/O workload. Every read and write is done in multiples of the block size. The size can vary between 1KB and 128KB.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For Stor\+Kit Revision 1.\+0, it only supports non N\+CQ benchmark. 
+
+The maximum size of block size up to 512KB in Linux system. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a5a6f15d6814f37378ba7a3b898cf41fe}\label{class_s_k_t_test_delegate_a5a6f15d6814f37378ba7a3b898cf41fe}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!sequentialRead@{sequentialRead}}
+\index{sequentialRead@{sequentialRead}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{sequentialRead()}{sequentialRead()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::sequential\+Read (\begin{DoxyParamCaption}\item[{U64}]{start\+Lba,  }\item[{U64}]{end\+Lba,  }\item[{U32}]{block\+Size\+In\+KB }\end{DoxyParamCaption})}
+
+
+
+Sequential read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Lba} & An U64 variable to specify a starting logical block address. \\
+\hline
+{\em end\+Lba} & An U64 variable to specify an ending logical block address. \\
+\hline
+{\em block\+Size\+In\+KB} & The block size in kilobyte is the unit of I/O workload. Every read and write is done in multiples of the block size. The size can vary between 1KB and 128KB.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The maximum size of block size up to 512KB in Linux system. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a5a1208defc74b67bdb4b1c486dea6087}\label{class_s_k_t_test_delegate_a5a1208defc74b67bdb4b1c486dea6087}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!randomWriteWithUniquePatterns@{randomWriteWithUniquePatterns}}
+\index{randomWriteWithUniquePatterns@{randomWriteWithUniquePatterns}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{randomWriteWithUniquePatterns()}{randomWriteWithUniquePatterns()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::random\+Write\+With\+Unique\+Patterns (\begin{DoxyParamCaption}\item[{U64}]{start\+Lba,  }\item[{U64}]{end\+Lba,  }\item[{U32}]{block\+Size\+In\+KB,  }\item[{U32}]{size\+In\+MB,  }\item[{U32}]{seed }\end{DoxyParamCaption})}
+
+
+
+This function writes unique data pattern for each L\+BA. ~\newline
+The data (written L\+B\+As) will be marked and stored on file. This file will be used for verification of data integrity. The marked written L\+B\+As file format is the combination of the device model and \textquotesingle{}\+\_\+lba.\+log\textquotesingle{}. ~\newline
+The writes are random. This function is useful in the following situations\+: 
+
+
+\begin{DoxyItemize}
+\item To verify if data is corrupt in case of sudden power loss.
+\item To use with data retention test at power off. Write data to the drive and turn power off, read data from the drive later, and verify if the data is intact.
+\item To verify if data is corrupt due to address trampling, bad garbage collection or bad wear leveling in firmware. This function writes data randomly, therefore, it makes it harder on the S\+SD.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Lba} & An U64 variable to specify a starting logical block address. \\
+\hline
+{\em end\+Lba} & An U64 variable to specify an ending logical block address. \\
+\hline
+{\em block\+Size\+In\+KB} & The block size in kilobyte is the unit of I/O workload. Every read and write is done in multiples of the block size. The size can vary between 1KB and 128KB. \\
+\hline
+{\em size\+In\+MB} & Size of total random write in MB. \\
+\hline
+{\em seed} & An U32 random seed that allow you to write the same random lba multiple times.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For Stor\+Kit Revision 1.\+0, it only supports non N\+CQ benchmark. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a093e3555e092155feb9c19f40f33e90d}\label{class_s_k_t_test_delegate_a093e3555e092155feb9c19f40f33e90d}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!randomRead@{randomRead}}
+\index{randomRead@{randomRead}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{randomRead()}{randomRead()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::random\+Read (\begin{DoxyParamCaption}\item[{U64}]{start\+Lba,  }\item[{U64}]{end\+Lba,  }\item[{U32}]{block\+Size\+In\+KB,  }\item[{U32}]{size\+In\+MB,  }\item[{U32}]{seed }\end{DoxyParamCaption})}
+
+
+
+Random read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Lba} & An U64 variable to specify a starting logical block address. \\
+\hline
+{\em end\+Lba} & An U64 variable to specify an ending logical block address. \\
+\hline
+{\em block\+Size\+In\+KB} & The block size in kilobyte is the unit of I/O workload. Every read and write is done in multiples of the block size. The size can vary between 1KB and 128KB. \\
+\hline
+{\em size\+In\+MB} & Size of total random write in MB. \\
+\hline
+{\em seed} & An U32 random seed that allow you to write and verify the same random lba multiple times.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a544ac08a737b1045095deb23b8e6ba5d}\label{class_s_k_t_test_delegate_a544ac08a737b1045095deb23b8e6ba5d}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!verifyDataIntegrity@{verifyDataIntegrity}}
+\index{verifyDataIntegrity@{verifyDataIntegrity}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{verifyDataIntegrity()}{verifyDataIntegrity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::verify\+Data\+Integrity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verify data integrity. ~\newline
+All marked written lbas will be read from the drive and use the information in the data itself to verify whether the data is OK or corrupted. 
+
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_ad25f9f0d4aabe6c159b08c751c3fce6a}\label{class_s_k_t_test_delegate_ad25f9f0d4aabe6c159b08c751c3fce6a}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!cleanupWorkloadDataFile@{cleanupWorkloadDataFile}}
+\index{cleanupWorkloadDataFile@{cleanupWorkloadDataFile}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{cleanupWorkloadDataFile()}{cleanupWorkloadDataFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::cleanup\+Workload\+Data\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clean up workload data file which contains marked written lbas. 
+
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a352d1c5033473624451b30e54117d316}\label{class_s_k_t_test_delegate_a352d1c5033473624451b30e54117d316}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!sequentialReadPerformanceTest@{sequentialReadPerformanceTest}}
+\index{sequentialReadPerformanceTest@{sequentialReadPerformanceTest}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{sequentialReadPerformanceTest()}{sequentialReadPerformanceTest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::sequential\+Read\+Performance\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} \&}]{bench\+Spec,  }\item[{\mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} \&}]{report\+Info }\end{DoxyParamCaption})}
+
+
+
+This function performs a sequential read test on the storage device and return performance data. ~\newline
+The performance data is calculated based on the amount data read and duration of the test. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em bench\+Spec} & Structure \mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} contains setup information. \\
+\hline
+\mbox{\texttt{ out}}  & {\em report\+Info} & Structure \mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} contains the results.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For Stor\+Kit Revision 1.\+0, it only supports non N\+CQ benchmark. It means to measure the actual response time of the storage. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a223a0b6bfc90fe5ccdd43e8e966daeb0}\label{class_s_k_t_test_delegate_a223a0b6bfc90fe5ccdd43e8e966daeb0}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!sequentialWritePerformanceTest@{sequentialWritePerformanceTest}}
+\index{sequentialWritePerformanceTest@{sequentialWritePerformanceTest}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{sequentialWritePerformanceTest()}{sequentialWritePerformanceTest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::sequential\+Write\+Performance\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} \&}]{bench\+Spec,  }\item[{\mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} \&}]{report\+Info }\end{DoxyParamCaption})}
+
+
+
+This function performs a sequential write test on the storage device and return performance data. ~\newline
+The performance data is calculated based on the amount data written and duration of the test. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em bench\+Spec} & Structure \mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} contains setup information. \\
+\hline
+\mbox{\texttt{ out}}  & {\em report\+Info} & Structure \mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} contains the results.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For Stor\+Kit Revision 1.\+0, it only supports non N\+CQ benchmark. It means to measure the actual response time of the storage. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a9b3d1518a010dbb1c0d28d5360a6fa9f}\label{class_s_k_t_test_delegate_a9b3d1518a010dbb1c0d28d5360a6fa9f}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!randomReadPerformanceTest@{randomReadPerformanceTest}}
+\index{randomReadPerformanceTest@{randomReadPerformanceTest}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{randomReadPerformanceTest()}{randomReadPerformanceTest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::random\+Read\+Performance\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} \&}]{bench\+Spec,  }\item[{\mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} \&}]{report\+Info }\end{DoxyParamCaption})}
+
+
+
+This function performs a random read test on the storage device and return performance data. ~\newline
+The performance data is calculated based on the amount data read and duration of the test. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em bench\+Spec} & Structure \mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} contains setup information. \\
+\hline
+\mbox{\texttt{ out}}  & {\em report\+Info} & Structure \mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} contains the results.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For Stor\+Kit Revision 1.\+0, it only supports non N\+CQ benchmark. It means to measure the actual response time of the storage. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_abbe57641b0fab7b4088419a7c11f8978}\label{class_s_k_t_test_delegate_abbe57641b0fab7b4088419a7c11f8978}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!randomWritePerformanceTest@{randomWritePerformanceTest}}
+\index{randomWritePerformanceTest@{randomWritePerformanceTest}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{randomWritePerformanceTest()}{randomWritePerformanceTest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::random\+Write\+Performance\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} \&}]{bench\+Spec,  }\item[{\mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} \&}]{report\+Info }\end{DoxyParamCaption})}
+
+
+
+This function performs a random write test on the storage device and return performance data. ~\newline
+The performance data is calculated based on the amount data written and duration of the test. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em bench\+Spec} & Structure \mbox{\hyperlink{struct_s_k_t_benchmark_specific_setup}{S\+K\+T\+Benchmark\+Specific\+Setup}} contains setup information. \\
+\hline
+\mbox{\texttt{ out}}  & {\em report\+Info} & Structure \mbox{\hyperlink{struct_s_k_t_benchmark_report}{S\+K\+T\+Benchmark\+Report}} contains the results.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code to indicate whether the function succeeded. If the function failed, the code indicates the reason for the failure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For Stor\+Kit Revision 1.\+0, it only supports non N\+CQ benchmark. It means to measure the actual response time of the storage. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a0db3d4f4d578063fdd4f76878a380c29}\label{class_s_k_t_test_delegate_a0db3d4f4d578063fdd4f76878a380c29}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!startMaxPowerConsumptionTest@{startMaxPowerConsumptionTest}}
+\index{startMaxPowerConsumptionTest@{startMaxPowerConsumptionTest}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{startMaxPowerConsumptionTest()}{startMaxPowerConsumptionTest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::start\+Max\+Power\+Consumption\+Test (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_storage_kit_test_delegate_8h_a0bde7719e6307ceed4a51107ed3de2ef}{S\+K\+T\+Power\+Consumption\+Mode}} \&}]{mode }\end{DoxyParamCaption})}
+
+
+
+Start the thread to create max power consumption condition on the S\+SD. There are two operating modes\+: 
+
+
+\begin{DoxyItemize}
+\item In Production mode\+: sequential write performed until reaching stop condition.
+\item In Live mode\+: sequential read performed until reaching stop condition.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & A S\+K\+T\+Power\+Consumption\+Mode object to specify power consumption mode.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A S\+K\+T\+Test\+Return\+Code object to specify the return code.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The test will run until you invoke function \mbox{\hyperlink{class_s_k_t_test_delegate_a022692ef371a3aa9a24e19b5a5e129c7}{stop\+Max\+Power\+Consumption\+Test}}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a022692ef371a3aa9a24e19b5a5e129c7}\label{class_s_k_t_test_delegate_a022692ef371a3aa9a24e19b5a5e129c7}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!stopMaxPowerConsumptionTest@{stopMaxPowerConsumptionTest}}
+\index{stopMaxPowerConsumptionTest@{stopMaxPowerConsumptionTest}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{stopMaxPowerConsumptionTest()}{stopMaxPowerConsumptionTest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::stop\+Max\+Power\+Consumption\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the thread is created previously by \mbox{\hyperlink{class_s_k_t_test_delegate_a0db3d4f4d578063fdd4f76878a380c29}{start\+Max\+Power\+Consumption\+Test}} function. 
+
+\begin{DoxyReturn}{Returns}
+A S\+K\+T\+Test\+Return\+Code object to specify the return code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a370b8ca0f86a90bc36101fd701b82609}\label{class_s_k_t_test_delegate_a370b8ca0f86a90bc36101fd701b82609}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!ataSleep@{ataSleep}}
+\index{ataSleep@{ataSleep}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{ataSleep()}{ataSleep()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::ata\+Sleep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Put device in sleep mode. 
+
+\begin{DoxyReturn}{Returns}
+A S\+K\+T\+Test\+Return\+Code object to specify the return code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a90d0c168749430e20f9bee211adc20da}\label{class_s_k_t_test_delegate_a90d0c168749430e20f9bee211adc20da}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!startDiagnostic@{startDiagnostic}}
+\index{startDiagnostic@{startDiagnostic}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{startDiagnostic()}{startDiagnostic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::start\+Diagnostic (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{log\+File\+Path }\end{DoxyParamCaption})}
+
+
+
+Start the diagnostic. ~\newline
+Start the thread to log collected data (S\+M\+A\+RT) periodically on a log file. Data (S\+M\+A\+RT) including U\+D\+MA C\+RC error count and E\+CC recovered. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+File\+Path} & A string object to specify dump log file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A S\+K\+T\+Test\+Return\+Code object to specify the return code.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The test will run until you invoke function \mbox{\hyperlink{class_s_k_t_test_delegate_a83eb8f0f40e0ba07f93bcc2bfbe3b14f}{stop\+Diagnostic}}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_a83eb8f0f40e0ba07f93bcc2bfbe3b14f}\label{class_s_k_t_test_delegate_a83eb8f0f40e0ba07f93bcc2bfbe3b14f}} 
+\index{SKTTestDelegate@{SKTTestDelegate}!stopDiagnostic@{stopDiagnostic}}
+\index{stopDiagnostic@{stopDiagnostic}!SKTTestDelegate@{SKTTestDelegate}}
+\subsubsection{\texorpdfstring{stopDiagnostic()}{stopDiagnostic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_storage_kit_test_delegate_8h_a143844aea21c1ac420c1d0307a69deb7}{S\+K\+T\+Return\+Code}} S\+K\+T\+Test\+Delegate\+::stop\+Diagnostic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the thread is created previously by \mbox{\hyperlink{class_s_k_t_test_delegate_a90d0c168749430e20f9bee211adc20da}{start\+Diagnostic}} function. 
+
+\begin{DoxyReturn}{Returns}
+A S\+K\+T\+Test\+Return\+Code object to specify the return code. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/tranminhtam/\+Documents/azure/\+Storage\+Kit/test-\/delegate/include/\mbox{\hyperlink{_storage_kit_test_delegate_8h}{Storage\+Kit\+Test\+Delegate.\+h}}\end{DoxyCompactItemize}

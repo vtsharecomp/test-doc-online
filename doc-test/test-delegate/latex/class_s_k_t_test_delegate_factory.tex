@@ -1,0 +1,44 @@
+\hypertarget{class_s_k_t_test_delegate_factory}{}\section{S\+K\+T\+Test\+Delegate\+Factory Class Reference}
+\label{class_s_k_t_test_delegate_factory}\index{SKTTestDelegateFactory@{SKTTestDelegateFactory}}
+
+
+{\ttfamily \#include $<$Storage\+Kit\+Test\+Delegate\+Factory.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{defines_8h_a0304d37d6cebb46e900420b3caedcd16}{T\+E\+S\+T\+D\+E\+L\+E\+G\+A\+T\+E\+\_\+\+D\+L\+L\+S\+P\+EC}} \mbox{\hyperlink{class_s_k_t_test_delegate}{S\+K\+T\+Test\+Delegate}} $\ast$ \mbox{\hyperlink{class_s_k_t_test_delegate_factory_a6e33ab5a7ecc0f65e2977a248d75ae8b}{create}} (S\+K\+Storage\+Device $\ast$storage\+Device, bool load\+Written\+Lbas\+From\+File=true, bool free\+Storage\+Device=true)
+\begin{DoxyCompactList}\small\item\em Creates the test delegate object by a storage device pointer and a bool optional free storage device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{class_s_k_t_test_delegate_factory_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{class_s_k_t_test_delegate_factory_DESCRIPTION}
+This factory class is used to create \mbox{\hyperlink{class_s_k_t_test_delegate}{S\+K\+T\+Test\+Delegate}} object. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_k_t_test_delegate_factory_a6e33ab5a7ecc0f65e2977a248d75ae8b}\label{class_s_k_t_test_delegate_factory_a6e33ab5a7ecc0f65e2977a248d75ae8b}} 
+\index{SKTTestDelegateFactory@{SKTTestDelegateFactory}!create@{create}}
+\index{create@{create}!SKTTestDelegateFactory@{SKTTestDelegateFactory}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{defines_8h_a0304d37d6cebb46e900420b3caedcd16}{T\+E\+S\+T\+D\+E\+L\+E\+G\+A\+T\+E\+\_\+\+D\+L\+L\+S\+P\+EC}} \mbox{\hyperlink{class_s_k_t_test_delegate}{S\+K\+T\+Test\+Delegate}}$\ast$ S\+K\+T\+Test\+Delegate\+Factory\+::create (\begin{DoxyParamCaption}\item[{S\+K\+Storage\+Device $\ast$}]{storage\+Device,  }\item[{bool}]{load\+Written\+Lbas\+From\+File = {\ttfamily true},  }\item[{bool}]{free\+Storage\+Device = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates the test delegate object by a storage device pointer and a bool optional free storage device. 
+
+If free\+Storage\+Device sets true then storage\+Device will be free up after this created object deleted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage\+Device} & A storage device object retrieved from storage api (devices scanned). \\
+\hline
+{\em load\+Written\+Data\+From\+File} & A bool variable to indicate whether written lbas load from file or initial new (default is true). \\
+\hline
+{\em free\+Storage\+Device} & A bool variable to indicate if allow free up the storage\+Device or not after this object deleted (default is true). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/tranminhtam/\+Documents/azure/\+Storage\+Kit/test-\/delegate/include/\mbox{\hyperlink{_storage_kit_test_delegate_factory_8h}{Storage\+Kit\+Test\+Delegate\+Factory.\+h}}\end{DoxyCompactItemize}
